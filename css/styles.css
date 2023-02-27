@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica;
+}
+
+body {
+  padding: 1.2rem;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+button {
+  padding: 0.6rem 1.4rem;
+  background-color: #666;
+  color: #fff;
+  border: none;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+button:hover {
+  opacity: 1;
+}
+
+#open-modal {
+  background-color: #003cff;
+}
+
+#fade,
+#modal {
+  transition: 0.4s;
+  opacity: 1;
+  pointer-events: all;
+}
+
+#fade {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+/*Modal na frente do Fade*/
+#modal {
+  background-color: #fff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 500px;
+  max-width: 90%;
+  padding: 1.2rem;
+  border-radius: 0.6rem;
+}
+
+#modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #aaa;
+  padding-bottom: 1rem;
+}
+
+#modal-body p {
+  margin-bottom: 1rem;
+}
+
+/*Com "opacity" dá pra controlar a transição do elemento. Com "display:none" não*/
+#fade.hide,
+#modal.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#modal.hide {
+  top: 0;
+}
